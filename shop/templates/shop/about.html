@@ -1,0 +1,67 @@
+{% extends 'shop/basic.html' %}
+
+
+{% block title%} About Us {% endblock %}
+
+{% load static %}
+{% block css %}
+img {
+    max-width:200px;
+    max-height:150px;
+    width:auto;
+    height:auto;
+}
+
+{% endblock %}
+{% block body %}
+
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">My Awesome Cart!</h1>
+      <p>Store67 Pte Ltd is a Singaporean multinational technology company which focuses mainly on e-commerce. Headquartered under Sea Group (previously known as Garena), Shopee was first launched in Singapore in 2015, and later expanded its reach to Malaysia, Thailand, Taiwan, Indonesia, Vietnam, the Philippines, Brazil, Mexico, Chile, and Colombia.
+It currently serves consumers in Southeast and East Asia, as well as several countries in Latin America, such as Brazil and Mexico, who want to purchase and sell their goods online as of 2021.Shopee was called one of the "5 disruptive ecommerce startups we saw in 2015" by Tech In Asia for its technical advancement and mass scale, thanks to the mobile and social elements integrated into the model.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Founder</h2>
+        <p>Le Quang Phu is the founder of the company based on the e-commerce market in 2021 on django.
+        Currently, he is an influential person to today's youth</p>
+        <img class="img-fluid" src="{% static 'shop/phudz.jpg' %}" alt="..." />
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Co-Founder</h2>
+        <p>Stone is the one who co-founded store67 with Phule.
+          He contributed to the company's marketing and brought the company to market quickly </p>
+        <img class="img-fluid" src="{% static 'shop/stone.jpg' %}" alt="..." />
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Managing director</h2>
+        <p>Harry was the company's first chief executive officer.
+          He has great merit in running the company and developing quickly to foreign markets.</p>
+        <img class="img-fluid" src="{% static 'shop/vaynerchuk.jpg' %}" alt="..." />
+
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+
+
+
+{% endblock %}
