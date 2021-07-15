@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
 from pathlib import Path
-
 import dj_database_url
 from decouple import config
 
@@ -31,7 +30,7 @@ SECRET_KEY = 'django-insecure-n86m^&un*luxq0h8ff8sy9-=f)u&fxv+(10n0b+x7(5*!eu$!6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shinstore.herokuapp.com']
+ALLOWED_HOSTS = ['shinmotor.herokuapp.com']
 
 
 # Application definition
