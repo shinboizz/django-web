@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
 from pathlib import Path
-import dj_database_url
+import django_heroku
 from decouple import config
 
 
@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-n86m^&un*luxq0h8ff8sy9-=f)u&fxv+(10n0b+x7(5*!eu$!6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shinmotor.herokuapp.com']
+ALLOWED_HOSTS = ['shop-motor.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -146,6 +146,8 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -156,5 +158,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Activate Django-Heroku.
 #django_heroku.settings(locals())
 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+# Activate Django-Heroku.
+django_heroku.settings(locals())
