@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os.path
 from pathlib import Path
 #import django_heroku
-import django_on_heroku
+#import django_on_heroku
 from decouple import config
 
 
@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-n86m^&un*luxq0h8ff8sy9-=f)u&fxv+(10n0b+x7(5*!eu$!6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'mac.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -131,13 +131,14 @@ USE_TZ = True
 #STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC_DIRS = os.path.join(BASE_DIR, 'static')
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Managing Media
@@ -156,7 +157,7 @@ LOGIN_REDIRECT_URL = '/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-django_on_heroku.settings(locals())
+#django_on_heroku.settings(locals())
 
 # Activate Django-Heroku.
 #django_heroku.settings(locals())
